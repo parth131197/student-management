@@ -1,0 +1,42 @@
+{
+    "env": "testing",
+    "server": {
+        "port": 54501,
+        "host": "0.0.0.0"
+    },
+    "logging": {
+		"name": "TEST-PROJ",
+		"level": "debug",
+		"path": "/tmp/node_debug.log"
+    },
+    "database": {
+		"mongo": {
+			"type": "mongo",
+			"name": "mongo_temp_db",
+			"host": "0.0.0.0",
+			"port": 27017,
+			"username": "",
+			"password": "",
+			"options": {
+				"host": "0.0.0.0",
+				"port": 27017,
+				"dialect": "mongo",
+				"underscored": true,
+				"timestamps": false,
+				"define": { "underscored": true, "timestamps": false },
+				"pool": {
+					"maxConnections": 20,
+					"minConnections": 5,
+					"maxIdleTime": 30000
+				}
+			}
+		},
+		"postgres":{
+			"host": "postgres",
+			"user": "postgres",
+			"database": "postgres",
+			"password": "postgres_password",
+			"port": 5432
+		}
+	}
+}

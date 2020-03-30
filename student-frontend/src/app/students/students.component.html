@@ -1,0 +1,24 @@
+<div class="students-component">
+    <div class="table-container">
+        <table>
+            <div class="table-header">
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Section</th>
+                <th style="width: 70px;padding: 10px;" class="flex-center-icon">
+                    <div (click)="addNewStudent()" class="add-icon image-contain-fit"></div>
+                </th>
+            </div>
+            <tr class="table-row" *ngFor="let student of studentsList">
+                <td> {{student?.rollno}} </td>
+                <td> {{student?.name}} </td>
+                <td> {{student?.age}} </td>
+                <td> {{student?.section}} </td>
+                <td style="width: 70px;" class="flex-center-icon">
+                    <div (click)="deleteStudent(student?.rollno)" class="delete-icon image-contain-fit"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

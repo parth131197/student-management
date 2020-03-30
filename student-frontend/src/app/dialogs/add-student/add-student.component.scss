@@ -1,0 +1,18 @@
+.add-student-dialog{
+    padding: 40px 20px 20px 20px;
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    .center-align{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 20px 0 20px;
+        box-sizing: border-box;
+        .submitButton{
+            padding: 6px 15px;
+            border-radius: 23px;
+        }
+    }
+}

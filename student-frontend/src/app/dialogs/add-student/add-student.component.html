@@ -1,0 +1,28 @@
+<div class="add-student-dialog">
+    <form [formGroup]="addStudentForm" (ngSubmit)="addStudent()">
+        <mat-form-field>
+            <mat-label>Roll No</mat-label>
+            <input formControlName="roll_no" matInput type="number" onkeypress="return event.charCode != 45 && event.charCode != 43 && event.charCode != 46" min="1">
+            <mat-error *ngIf="roll_no.invalid">Enter Roll Number</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput>
+            <mat-error *ngIf="name.invalid">Enter Name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input formControlName="age" matInput type="number" onkeypress="return event.charCode != 45 && event.charCode != 43 && event.charCode != 46" min="1">
+            <mat-error *ngIf="age.invalid">Enter Age</mat-error>
+            
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Section</mat-label>
+            <input formControlName="section" matInput>
+            <mat-error *ngIf="section.invalid">Enter Section</mat-error>
+        </mat-form-field>
+        <div class="center-align">
+            <button type="submit" mat-raised-button [disabled]="addStudentForm.invalid" color="primary" class="submitButton">Add Student</button>
+        </div>
+    </form>
+</div>

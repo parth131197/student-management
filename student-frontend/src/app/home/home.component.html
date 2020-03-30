@@ -1,0 +1,15 @@
+<div class="home-component">
+    <div class="moon-section">
+        <div class="moon-image rotating"></div>
+    </div>
+    <div>
+        <button class="goButton" (click)="goToStudentsPage()">To Infinity</button>
+    </div>
+    <div class="rocketSection" (@rocketLauncher.done)="launcherAnimationEnd($event)" [@rocketLauncher]="launcher">
+        <div class="rocketImage"></div>
+        <div class="boosterImage"></div>
+    </div>
+    
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+</div>

@@ -1,0 +1,33 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_PASSWORD=postgres_password
+  student-frontend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./student-frontend
+    volumes:
+      - ./student-frontend:/app
+      - /app/node_modules
+  student-backend:
+    depends_on:
+      - postgres
+    environment:
+      - PGHOST=postgres
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./student-backend
+    volumes:
+      - ./student-backend:/app
+      - /app/node_modules
+  student-nginx:
+    depends_on:
+      - student-backend
+      - student-frontend
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '4000:80'

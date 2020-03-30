@@ -1,0 +1,27 @@
+{
+  "name": "student-backend",
+  "version": "1.0.0",
+  "description": "Studend Management backend service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "author": "Parth Gupta",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "1.18.3",
+    "@hapi/hapi": "^19.0.0",
+    "@hapi/inert": "^6.0.1",
+    "@hapi/joi": "^17.1.0",
+    "@hapi/vision": "^6.0.0",
+    "@scoop/bunyan": "^2.0.2",
+    "@types/hapi": "^17.6.1",
+    "app-module-path": "^2.2.0",
+    "config": "^3.2.5",
+    "hapi-cors-headers": "^1.0.3",
+    "hapi-swagger": "^12.1.0",
+    "lodash": "^4.17.15",
+    "pg": "^7.18.2"
+  }
+}
