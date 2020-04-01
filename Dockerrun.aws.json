@@ -9,19 +9,11 @@
             "memory":128
         },
         {
-            "name": "student-database",
-            "image": "postgres:latest",
-            "hostname": "postgres",
-            "essential": false,
-            "memory":128
-        },
-        {
             "name": "student-backend",
             "image": "parthgupta13/student-backend",
             "hostname": "student-backend",
             "essential": false,
-            "memory":128,
-            "links":["student-database"]
+            "memory":128
         },
         {
             "name": "student-nginx",
