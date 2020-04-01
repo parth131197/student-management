@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build parthgupta13/student-frontend-test -f ./student-frontend/Dockerfile.dev ./student-frontend
+  - docker build -t parthgupta13/student-frontend-test -f ./student-frontend/Dockerfile.dev ./student-frontend
   
 script:
   - docker run parthgupta13/student-frontend-test npm run test
