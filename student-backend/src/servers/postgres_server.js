@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const Config = require('config');
 const pool = new Pool({
     user: Config.database.postgres.user,
-    host: process.env.PGHOST, //Config.database.postgres.host,
+    host: Config.database.postgres.host,//process.env.PGHOST, //Config.database.postgres.host,
     database: Config.database.postgres.database,
     password: Config.database.postgres.password,
     port: Config.database.postgres.port

@@ -23,3 +23,15 @@ after_success:
   - docker push parthgupta13/student-backend
   - docker push parthgupta13/student-nginx
   
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "student-management"
+  env: "StudentManagement-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-655159759760"
+  bucket_path: "docker-student"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  

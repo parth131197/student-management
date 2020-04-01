@@ -1,0 +1,42 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions":[
+        {
+            "name": "student-frontend",
+            "image": "parthgupta13/student-frontend",
+            "hostname": "student-frontend",
+            "essential": false,
+            "memory":128
+        },
+        {
+            "name": "student-database",
+            "image": "postgres:latest",
+            "hostname": "postgres",
+            "essential": false,
+            "memory":128
+        },
+        {
+            "name": "student-backend",
+            "image": "parthgupta13/student-backend",
+            "hostname": "student-backend",
+            "essential": false,
+            "memory":128,
+            "links":["student-database"]
+        },
+        {
+            "name": "student-nginx",
+            "image": "parthgupta13/student-nginx",
+            "hostname": "student-nginx",
+            "essential": true,
+            "memory":128,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["student-frontend","student-backend"]
+        }
+        
+    ]
+}
