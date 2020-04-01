@@ -6,7 +6,7 @@ before_install:
   - docker build -t parthgupta13/student-frontend-test -f ./student-frontend/Dockerfile.dev ./student-frontend
   
 script:
-  - docker run parthgupta13/student-frontend-test npm run test
+  - docker run parthgupta13/student-frontend-test npm run test_headless
 
 after_success:
   - docker build -t parthgupta13/student-frontend ./student-frontend
