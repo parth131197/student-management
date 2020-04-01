@@ -8,13 +8,14 @@ services:
 #   - sh -e /etc/init.d/xvfb start
 #   - docker build -t parthgupta13/student-frontend-test -f ./student-frontend/Dockerfile.dev ./student-frontend
   
-# script:
-#   - docker run parthgupta13/student-frontend-test npm run test_headless
-
-after_success:
+script:
+  # - docker run parthgupta13/student-frontend-test npm run test_headless
   - docker build -t parthgupta13/student-frontend ./student-frontend
   - docker build -t parthgupta13/student-backend ./student-backend
   - docker build -t parthgupta13/student-nginx ./nginx
+
+after_success:
+  
   # Login in to docker 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Pushing images to dockerhub
